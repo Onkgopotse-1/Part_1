@@ -11,8 +11,8 @@ import static java.util.Arrays.equals;
 import static java.util.Objects.equals;
 import javax.swing.JOptionPane;
 
-/**
- *
+/**Student Name: Onkgopotse Hume
+ *Student Number: ST10479165
  * @author onkgopotsehume
  */
 public class Login extends javax.swing.JFrame {

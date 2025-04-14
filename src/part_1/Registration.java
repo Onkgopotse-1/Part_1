@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package part_1;
-
+/**Student Name: Onkgopotse Hume
+ *Student Number: ST10479165
+ * @author onkgopotsehume
+ */
 
 import javax.swing.JOptionPane;
 import java.util.regex.Matcher;
