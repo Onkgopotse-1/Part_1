@@ -3,16 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package part_1;
-/**Student Name: Onkgopotse Hume
- *Student Number: ST10479165
+/** Student Name: Onkgopotse Hume
+ * Student Number: ST10479165
  * @author onkgopotsehume
  */
 
 import javax.swing.JOptionPane;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/**
- *
+/** Student Name: Onkgopotse Hume
+ * Student Number: ST10479165
  * @author onkgopotsehume
  */
 public class Registration extends javax.swing.JFrame {
@@ -223,7 +223,7 @@ new Registration().setVisible(true);
     // End of variables declaration//GEN-END:variables
 
     private void handleRegistration() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     String username = USERNAME.getText();
     String cellphonenumber = CELLPHONENUMBER.getText();
     String firstname = FIRSTNAME.getText();
@@ -275,7 +275,7 @@ new Registration().setVisible(true);
 
     }
 private boolean iscellphonevalid(String cellphonenumber){
-String regex = "^\\ +(1-9)[0-9](0-2)[0-9](9,10)$";
+String regex = "^(0\\d{9}|\\+27\\d{9})$";
 Pattern pattern=Pattern.compile(regex);
 Matcher matcher = pattern.matcher(cellphonenumber);
 return matcher.matches();

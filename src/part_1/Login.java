@@ -118,30 +118,17 @@ public class Login extends javax.swing.JFrame {
        //validation
        String enterUsername = txt_Username.getText().trim();
        String enterPassword = new String( txt_Password.getPassword()).trim();
+       if (authenticateUser(enterUsername,enterPassword)){
+           
+           JOptionPane.showMessageDialog(this, "Wellcome!!!");
+       }else{
+           //if not correct
+           JOptionPane.showMessageDialog(this,"please enter proper password and username" ,"login failed" ,JOptionPane.ERROR_MESSAGE);
+           
+       }
        if (enterUsername.isEmpty()|| enterPassword.isEmpty()){
            JOptionPane.showMessageDialog(this, "please enter password and username");
-}else{ 
-           try{
-               BufferedReader reader = new  BufferedReader(new FileReader("users.txt"));
-               String line;
-               while((line = reader.readLine()) != null) {
-                    String[] credentials = line.split(",");
-                    if(credentials.length == 2) {
-                        String storedUsername = credentials[0].trim();
-                        String storedPassword = credentials[1].trim();  
-                        if (enterUsername.equals(storedUsername) && enterPassword.equals(storedPassword)) {
-                            return ;
-                        }
-                    }
-               }
-                      
-           }catch (IOException e) {
-                System.out.println("Error reading users.txt: " );
-           }
-           return ; 
-// If no match found
        }
-       
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegActionPerformed
@@ -201,4 +188,36 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_Password;
     private javax.swing.JTextField txt_Username;
     // End of variables declaration//GEN-END:variables
+
+    private boolean authenticateUser(String enterUsername, String enterPassword) {
+         try (BufferedReader reader = new  BufferedReader(new FileReader("users.txt"))){
+               String line;
+               while((line = reader.readLine()) != null) {
+                    String[] credentials = line.split(",");
+                    if(credentials.length == 2) {
+                    
+                        String storedUsername = credentials[0].trim();
+                        
+                        String storedPassword = credentials[1].trim();  
+                        
+                        if (enterUsername.equals(storedUsername) && enterPassword.equals(storedPassword)) {
+                            return true;
+                            
+                        }
+                      
+                    
+                    
+                    
+                    }
+               }
+                      
+           }catch (IOException e) {
+                System.out.println("Error reading users.txt: " );
+           }
+           return false; 
+// If no match found
+       }
+    
 }
+
+

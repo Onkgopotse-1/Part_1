@@ -4,8 +4,8 @@
  */
 package part_1;
 
-/**Student Name: Onkgopotse Hume
- *Student Number: ST10479165
+/** Student Name: Onkgopotse Hume
+ * Student Number: ST10479165
  * @author onkgopotsehume
  */
 public class Part_1 {
